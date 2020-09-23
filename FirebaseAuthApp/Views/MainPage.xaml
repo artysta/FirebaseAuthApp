@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirebaseAuthApp.MainPage"
+             Title="Firebase Auth App">
+
+    <StackLayout>
+        <Button Text="Login page"
+                Clicked="Login_Button_Clicked" />
+        <Button Text="Register page"
+                Clicked="Register_Button_Clicked" />
+    </StackLayout>
+
+</ContentPage>
