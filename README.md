@@ -2,6 +2,11 @@
 
 Simple Xamarin.Forms cross-platform (Android &amp; iOS) application presenting Firebase Authentication.
 
+Remember to add Android & iOS applications to your Firebase project and download google services confing files. Put the files to the correct directories and change **Build Action** in the properties:
+
+- FirebaseAuthApp\FirebaseAuthApp.Android\google-services.json (**Build Action -> GoogleServicesJson**),
+- FirebaseAuthApp\FirebaseAuthApp.iOS\GoogleService-Info.plist (**Build Action -> BundleResource**).
+
 ---
 
 ### #0. Wanna cofigure your own cross-platform Fireabase Authentication project?
@@ -28,7 +33,7 @@ namespace FirebaseAuthApp
 
 ### #3. Configure Android project.
   - add [Xamarin.Firebase.Auth](https://www.nuget.org/packages/Xamarin.Firebase.Auth/) dependency using NuGet package manager,
-  - create **FirebaseAuthentication** implementing IFirebaseAuthentication interface:
+  - create **FirebaseAuthentication** implementing **IFirebaseAuthentication** interface:
 ```
 using Firebase.Auth;
 using FirebaseAuthApp.Droid;
@@ -63,7 +68,21 @@ namespace FirebaseAuthApp.Droid
 </ItemGroup>
 ```
  - add Android appliaction to your Firebase project & download **google-services.json** config file,
- - add **google-services.json** to your Android project and change BuildAction to GoogleServicesJson in its properties,
+ - add **google-services.json** to your Android project and change **Build Action** to **GoogleServicesJson** in its properties.
+ 
+ <table>
+   <tr>
+      <td>
+         <img src="/screenshots/screenshot-android-1.png"/>
+      </td>
+      <td>
+         <img src="/screenshots/screenshot-android-2.png"/>
+      </td>
+      <td>
+         <img src="/screenshots/screenshot-android-3.png"/>
+      </td>
+   </tr>
+</table>
   
 ### #4. Configure iOS project.
   - add [Xamarin.Firebase.iOS.Auth](https://www.nuget.org/packages/Xamarin.Firebase.iOS.Auth/) dependency using NuGet package manager,
@@ -117,7 +136,21 @@ namespace FirebaseAuthenticationApp.iOS
 
 ```
  - add iOS appliaction to your Firebase project & download **GoogleService-Info.plist** config file,
- - add **GoogleService-Info.plist** to your iOS project and change **BuildAction** to **BundleResource** in its properties.
+ - add **GoogleService-Info.plist** to your iOS project and change **Build Action** to **BundleResource** in its properties.
+ 
+<table>
+   <tr>
+      <td>
+         <img src="/screenshots/screenshot-ios-1.png"/>
+      </td>
+      <td>
+         <img src="/screenshots/screenshot-ios-2.png"/>
+      </td>
+      <td>
+         <img src="/screenshots/screenshot-ios-3.png"/>
+      </td>
+   </tr>
+</table>
 
 ### 4. Check if app is working using the code below.
 ```
