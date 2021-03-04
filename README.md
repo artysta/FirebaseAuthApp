@@ -18,7 +18,7 @@ There are a few things you need to do in order to make Firebase Authentication w
 ### #2. Configure shared project.
  - create **IFirebaseAuthentication** in shared project:
 
-```
+```c#
 using System.Threading.Tasks;
 
 namespace FirebaseAuthApp
@@ -34,7 +34,7 @@ namespace FirebaseAuthApp
 ### #3. Configure Android project.
   - add [Xamarin.Firebase.Auth](https://www.nuget.org/packages/Xamarin.Firebase.Auth/) dependency using NuGet package manager,
   - create **FirebaseAuthentication** implementing **IFirebaseAuthentication** interface:
-```
+```c#
 using Firebase.Auth;
 using FirebaseAuthApp.Droid;
 using System.Threading.Tasks;
@@ -62,7 +62,7 @@ namespace FirebaseAuthApp.Droid
 }
 ```
   - in **YourAppName**.Android.csproj (**FirebaseAuthApp**.Android.csproj in my case) file add:
-```
+```xml
 <ItemGroup>
   <GoogleServicesJson Include="google-services.json" />
 </ItemGroup>
@@ -87,7 +87,7 @@ namespace FirebaseAuthApp.Droid
 ### #4. Configure iOS project.
   - add [Xamarin.Firebase.iOS.Auth](https://www.nuget.org/packages/Xamarin.Firebase.iOS.Auth/) dependency using NuGet package manager,
   - create **FirebaseAuthentication** implementing **IFirebaseAuthentication** interface:
-```
+```c#
 using Firebase.Auth;
 using FirebaseAuthApp.iOS;
 using System.Threading.Tasks;
@@ -113,7 +113,7 @@ namespace FirebaseAuthApp.iOS
 }
 ```
   - initialize Firebase in AppDelegate.cs by adding `Firebase.Core.App.Configure();`:
-```
+```c#
 using Foundation;
 using UIKit;
 
@@ -153,7 +153,7 @@ namespace FirebaseAuthenticationApp.iOS
 </table>
 
 ### 4. Check if app is working using the code below.
-```
+```c#
 IFirebaseAuthentication auth = DependencyService.Get<IFirebaseAuthentication>();
 
 // Register.
